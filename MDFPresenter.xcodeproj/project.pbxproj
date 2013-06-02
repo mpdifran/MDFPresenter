@@ -16,9 +16,12 @@
 		FFD6AC56175ACA4D00E0B924 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD6AC55175ACA4D00E0B924 /* Default.png */; };
 		FFD6AC58175ACA4D00E0B924 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD6AC57175ACA4D00E0B924 /* Default@2x.png */; };
 		FFD6AC5A175ACA4D00E0B924 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD6AC59175ACA4D00E0B924 /* Default-568h@2x.png */; };
-		FFD6AC5D175ACA4D00E0B924 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD6AC5C175ACA4D00E0B924 /* ViewController.m */; };
-		FFD6AC60175ACA4D00E0B924 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD6AC5E175ACA4D00E0B924 /* ViewController_iPhone.xib */; };
-		FFD6AC63175ACA4D00E0B924 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD6AC61175ACA4D00E0B924 /* ViewController_iPad.xib */; };
+		FFD6AC60175ACA4D00E0B924 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD6AC5E175ACA4D00E0B924 /* ViewController.xib */; };
+		FFD6AC77175ACDA800E0B924 /* MDFPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD6AC73175ACDA800E0B924 /* MDFPresenter.m */; };
+		FFD6AC78175ACDA800E0B924 /* MDFPresentingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD6AC76175ACDA800E0B924 /* MDFPresentingObject.m */; };
+		FFD6AC7C175ACE0700E0B924 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD6AC7B175ACE0700E0B924 /* ViewController.m */; };
+		FFD6AC80175ACFEA00E0B924 /* NumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD6AC7E175ACFEA00E0B924 /* NumberViewController.m */; };
+		FFD6AC81175ACFEA00E0B924 /* NumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD6AC7F175ACFEA00E0B924 /* NumberViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,10 +38,16 @@
 		FFD6AC55175ACA4D00E0B924 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		FFD6AC57175ACA4D00E0B924 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		FFD6AC59175ACA4D00E0B924 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		FFD6AC5B175ACA4D00E0B924 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FFD6AC5C175ACA4D00E0B924 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		FFD6AC5F175ACA4D00E0B924 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
-		FFD6AC62175ACA4D00E0B924 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		FFD6AC5F175ACA4D00E0B924 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		FFD6AC73175ACDA800E0B924 /* MDFPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDFPresenter.m; sourceTree = "<group>"; };
+		FFD6AC74175ACDA800E0B924 /* MDFPresentingObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDFPresentingObject.h; sourceTree = "<group>"; };
+		FFD6AC75175ACDA800E0B924 /* MDFPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDFPresenter.h; sourceTree = "<group>"; };
+		FFD6AC76175ACDA800E0B924 /* MDFPresentingObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDFPresentingObject.m; sourceTree = "<group>"; };
+		FFD6AC7A175ACE0700E0B924 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FFD6AC7B175ACE0700E0B924 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FFD6AC7D175ACFEA00E0B924 /* NumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberViewController.h; sourceTree = "<group>"; };
+		FFD6AC7E175ACFEA00E0B924 /* NumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberViewController.m; sourceTree = "<group>"; };
+		FFD6AC7F175ACFEA00E0B924 /* NumberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NumberViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,12 +94,10 @@
 		FFD6AC49175ACA4D00E0B924 /* MDFPresenter */ = {
 			isa = PBXGroup;
 			children = (
+				FFD6AC72175ACD6600E0B924 /* MDFPresenter */,
+				FFD6AC79175ACDBE00E0B924 /* View Controllers */,
 				FFD6AC52175ACA4D00E0B924 /* AppDelegate.h */,
 				FFD6AC53175ACA4D00E0B924 /* AppDelegate.m */,
-				FFD6AC5B175ACA4D00E0B924 /* ViewController.h */,
-				FFD6AC5C175ACA4D00E0B924 /* ViewController.m */,
-				FFD6AC5E175ACA4D00E0B924 /* ViewController_iPhone.xib */,
-				FFD6AC61175ACA4D00E0B924 /* ViewController_iPad.xib */,
 				FFD6AC4A175ACA4D00E0B924 /* Supporting Files */,
 			);
 			path = MDFPresenter;
@@ -108,6 +115,30 @@
 				FFD6AC59175ACA4D00E0B924 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FFD6AC72175ACD6600E0B924 /* MDFPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				FFD6AC75175ACDA800E0B924 /* MDFPresenter.h */,
+				FFD6AC73175ACDA800E0B924 /* MDFPresenter.m */,
+				FFD6AC74175ACDA800E0B924 /* MDFPresentingObject.h */,
+				FFD6AC76175ACDA800E0B924 /* MDFPresentingObject.m */,
+			);
+			path = MDFPresenter;
+			sourceTree = "<group>";
+		};
+		FFD6AC79175ACDBE00E0B924 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FFD6AC7A175ACE0700E0B924 /* ViewController.h */,
+				FFD6AC7B175ACE0700E0B924 /* ViewController.m */,
+				FFD6AC5E175ACA4D00E0B924 /* ViewController.xib */,
+				FFD6AC7D175ACFEA00E0B924 /* NumberViewController.h */,
+				FFD6AC7E175ACFEA00E0B924 /* NumberViewController.m */,
+				FFD6AC7F175ACFEA00E0B924 /* NumberViewController.xib */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,8 +196,8 @@
 				FFD6AC56175ACA4D00E0B924 /* Default.png in Resources */,
 				FFD6AC58175ACA4D00E0B924 /* Default@2x.png in Resources */,
 				FFD6AC5A175ACA4D00E0B924 /* Default-568h@2x.png in Resources */,
-				FFD6AC60175ACA4D00E0B924 /* ViewController_iPhone.xib in Resources */,
-				FFD6AC63175ACA4D00E0B924 /* ViewController_iPad.xib in Resources */,
+				FFD6AC60175ACA4D00E0B924 /* ViewController.xib in Resources */,
+				FFD6AC81175ACFEA00E0B924 /* NumberViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,7 +210,10 @@
 			files = (
 				FFD6AC50175ACA4D00E0B924 /* main.m in Sources */,
 				FFD6AC54175ACA4D00E0B924 /* AppDelegate.m in Sources */,
-				FFD6AC5D175ACA4D00E0B924 /* ViewController.m in Sources */,
+				FFD6AC77175ACDA800E0B924 /* MDFPresenter.m in Sources */,
+				FFD6AC78175ACDA800E0B924 /* MDFPresentingObject.m in Sources */,
+				FFD6AC7C175ACE0700E0B924 /* ViewController.m in Sources */,
+				FFD6AC80175ACFEA00E0B924 /* NumberViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,20 +228,13 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		FFD6AC5E175ACA4D00E0B924 /* ViewController_iPhone.xib */ = {
+		FFD6AC5E175ACA4D00E0B924 /* ViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FFD6AC5F175ACA4D00E0B924 /* en */,
 			);
-			name = ViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		FFD6AC61175ACA4D00E0B924 /* ViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FFD6AC62175ACA4D00E0B924 /* en */,
-			);
-			name = ViewController_iPad.xib;
+			name = ViewController.xib;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
