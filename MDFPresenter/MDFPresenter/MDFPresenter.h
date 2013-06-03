@@ -1,6 +1,6 @@
 //
 //  FPPresenter.h
-//  iFreePhone
+//  MDFPresenter
 //
 //  Created by Mark DiFranco on 2013-02-27.
 //
