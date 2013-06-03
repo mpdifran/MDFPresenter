@@ -30,19 +30,48 @@
 //
 //
 
+#import <UIKit/UIKit.h>
+
 typedef void (^BasicBlock)(void);
+
+typedef enum {
+   FPPresentationStylePresentFade,
+   FPPresentationStylePresentModal,
+   FPPresentationStyleDismiss,
+   FPPresentationStyleDismissAll
+} FPPresentationStyle;
+
+//==========================================================
+// - MDFPresentingObject
+//==========================================================
+
+@interface MDFPresentingObject : NSObject
+
+@property (nonatomic, retain) UIViewController *viewController;
+@property (nonatomic, readwrite) BOOL animated;
+@property (nonatomic, readwrite) FPPresentationStyle presentationStyle;
+@property (nonatomic, copy) BasicBlock completion;
+
++ (MDFPresentingObject*)objectWithViewController:(UIViewController*)viewController animation:(BOOL)animation presentationStyle:(FPPresentationStyle)style completion:(BasicBlock)completion;
+
+@end
+
+//==========================================================
+// - MDFPresenter
+//==========================================================
 
 @interface MDFPresenter : NSObject
 
 + (MDFPresenter*)instance;
 + (BOOL)hasModalOpen;
 
-- (UIView*)topView;
-- (UIViewController*)topModalViewController;
-- (void)presentModalViewControllerInNavigationController:(UIViewController*)viewController animated:(BOOL)aniamted completion:(BasicBlock)completion;
-- (void)presentModalViewController:(UIViewController*)viewController animated:(BOOL)animated completion:(BasicBlock)completion;
-- (void)dismissModalViewControllerAnimated:(BOOL)animated completion:(BasicBlock)completion;
-- (void)dismissAllModalViewControllersAnimated:(BOOL)animated completion:(BasicBlock)completion;
-
++ (UIView*)topView;
++ (UIViewController*)topModalViewController;
++ (void)presentModalViewControllerInNavigationController:(UIViewController*)viewController animated:(BOOL)aniamted completion:(BasicBlock)completion;
++ (void)presentModalViewController:(UIViewController*)viewController animated:(BOOL)animated completion:(BasicBlock)completion;
++ (void)dismissModalViewControllerAnimated:(BOOL)animated completion:(BasicBlock)completion;
++ (void)dismissAllModalViewControllersAnimated:(BOOL)animated completion:(BasicBlock)completion;
 
 @end
+
+

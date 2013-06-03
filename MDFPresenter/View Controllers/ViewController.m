@@ -32,7 +32,7 @@
 
 - (void)simultaneouslyPresentViewControllers:(NSUInteger)number {
    for(int i = 0; i < number; i++) {
-      [[MDFPresenter instance] presentModalViewControllerInNavigationController:[NumberViewController controllerWithNumber:i+1] animated:YES completion:nil];
+      [MDFPresenter presentModalViewControllerInNavigationController:[NumberViewController controllerWithNumber:i+1] animated:YES completion:nil];
    }
 }
 

@@ -53,7 +53,7 @@
 #pragma mark - UIButton Methods
 
 - (void)doneClicked {
-   [[MDFPresenter instance] dismissAllModalViewControllersAnimated:YES completion:nil];
+   [MDFPresenter dismissAllModalViewControllersAnimated:YES completion:nil];
 }
 
 @end

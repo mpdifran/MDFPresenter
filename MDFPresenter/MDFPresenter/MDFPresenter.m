@@ -31,7 +31,36 @@
 //
 
 #import "MDFPresenter.h"
-#import "MDFPresentingObject.h"
+
+//==========================================================
+// - MDFPresentingObject
+//==========================================================
+
+@implementation MDFPresentingObject
+
+#pragma mark - Class Methods
+
++ (MDFPresentingObject*)objectWithViewController:(UIViewController*)viewController animation:(BOOL)animation presentationStyle:(FPPresentationStyle)style completion:(BasicBlock)completion {
+   MDFPresentingObject *object = [[[MDFPresentingObject alloc] init] autorelease];
+   object.viewController = viewController;
+   object.animated = animation;
+   object.presentationStyle = style;
+   object.completion = completion;
+   
+   return object;
+}
+
+- (void)dealloc {
+   [_viewController release];
+   [_completion release];
+   [super dealloc];
+}
+
+@end
+
+//==========================================================
+// - MDFPresenter
+//==========================================================
 
 @interface MDFPresenter() {
    BOOL isPresenting;
@@ -81,21 +110,17 @@
    return modalOpen;
 }
 
-#pragma mark - Instance Methods
-
-#pragma mark Public
-
-- (UIView*)topView {
-   UIView *view = [[self topModalViewController] view];
++ (UIView*)topView {
+   UIView *view = [[MDFPresenter topModalViewController] view];
    while (view.superview != nil) {
       view = view.superview;
    }
    return view;
 }
 
-- (UIViewController*)topModalViewController {
++ (UIViewController*)topModalViewController {
    
-   UIViewController *topViewController = [self rootModalViewController];
+   UIViewController *topViewController = [MDFPresenter rootModalViewController];
    
    while(nil != topViewController.presentedViewController) {
       topViewController = topViewController.presentedViewController;
@@ -104,7 +129,7 @@
    return topViewController;
 }
 
-- (UIViewController*)rootModalViewController {
++ (UIViewController*)rootModalViewController {
    UIWindow *topWindow = [[UIApplication sharedApplication] keyWindow];
    if (topWindow.windowLevel != UIWindowLevelNormal) {
       NSArray *windows = [[UIApplication sharedApplication] windows];
@@ -116,27 +141,29 @@
    return [topWindow rootViewController];
 }
 
-- (void)presentModalViewControllerInNavigationController:(UIViewController *)viewController animated:(BOOL)aniamted completion:(BasicBlock)completion {
++ (void)presentModalViewControllerInNavigationController:(UIViewController *)viewController animated:(BOOL)aniamted completion:(BasicBlock)completion {
    UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:viewController] autorelease];
-   [self presentModalViewController:navigationController animated:aniamted completion:completion];
+   [MDFPresenter presentModalViewController:navigationController animated:aniamted completion:completion];
 }
 
-- (void)presentModalViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(BasicBlock)completion {
++ (void)presentModalViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(BasicBlock)completion {
    MDFPresentingObject *object = [MDFPresentingObject objectWithViewController:viewController animation:animated presentationStyle:FPPresentationStylePresentModal completion:completion];
-   [self presentObject:object];
+   [[MDFPresenter instance] presentObject:object];
 }
 
-- (void)dismissModalViewControllerAnimated:(BOOL)animated completion:(BasicBlock)completion {
++ (void)dismissModalViewControllerAnimated:(BOOL)animated completion:(BasicBlock)completion {
    
    MDFPresentingObject *object = [MDFPresentingObject objectWithViewController:nil animation:animated presentationStyle:FPPresentationStyleDismiss completion:completion];
-   [self presentObject:object];
+   [[MDFPresenter instance] presentObject:object];
 }
 
-- (void)dismissAllModalViewControllersAnimated:(BOOL)animated completion:(BasicBlock)completion {
++ (void)dismissAllModalViewControllersAnimated:(BOOL)animated completion:(BasicBlock)completion {
    
    MDFPresentingObject *object = [MDFPresentingObject objectWithViewController:nil animation:animated presentationStyle:FPPresentationStyleDismissAll completion:completion];
-   [self presentObject:object];
+   [[MDFPresenter instance] presentObject:object];
 }
+
+#pragma mark - Instance Methods
 
 #pragma mark Private
 
@@ -158,11 +185,11 @@
       isPresenting = YES;
       MDFPresentingObject *object = [self.presentationQueue objectAtIndex:0];
       
-      UIViewController *topViewController = [self topModalViewController];
+      UIViewController *topViewController = [MDFPresenter topModalViewController];
       
       //End actions
       void (^endBlock)(void) = ^(void) {
-         [object executeCompletion];
+         object.completion ? object.completion() : nil;
          
          [[[MDFPresenter instance] presentationQueue] removeObject:object];
          
@@ -193,7 +220,7 @@
             }
             break;
          case FPPresentationStyleDismissAll: {
-               UIViewController *rootModalViewController = [self rootModalViewController];
+               UIViewController *rootModalViewController = [MDFPresenter rootModalViewController];
                if([rootModalViewController presentedViewController] != nil) {
                   [rootModalViewController dismissViewControllerAnimated:object.animated completion:endBlock];
                } else {
