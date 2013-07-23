@@ -23,7 +23,7 @@
  */
 
 //
-//  FPPresenter.h
+//  MDFPresenter.h
 //  MDFPresenter
 //
 //  Created by Mark DiFranco on 2013-02-27.
